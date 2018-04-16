@@ -18,7 +18,20 @@ public class Punt {
 	}
 	
 	@Override
+<<<<<<< Updated upstream
 	public String toString(){
 		return "(" + getX() + ", " + getY() + ")";
+=======
+	public boolean equals(Object object) {
+		if (object == null) {
+			return false;
+		}
+		return this.x == ((Punt) object).getX() && this.y == ((Punt) object).getY();
+	}
+	
+	@Override
+	public String toString() {
+		return "(" + this.x + "," + this.y + ")";
+>>>>>>> Stashed changes
 	}
 }
