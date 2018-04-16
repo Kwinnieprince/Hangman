@@ -2,19 +2,11 @@ package domain;
 
 public class DomainException extends RuntimeException {
 	
-	private String message;
+	public DomainException() {
+		super();
+	}
 
 	public DomainException(String message) {
-		this.setMessage(message);
+		super(message);
 	}
-
-	public String getMessage() {
-		return message;
-	}
-
-	private void setMessage(String message) {
-		this.message = message;
-	}
-	
-	
 }
