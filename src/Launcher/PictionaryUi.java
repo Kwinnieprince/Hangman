@@ -1,25 +1,25 @@
 package Launcher;
 
-import domain.Speler;
+import domain.*;
+
 import javax.swing.*;
 
 
 public class PictionaryUi {
 	private Speler speler;
-    String naam = null;
 
         public PictionaryUi(Speler speler){
-        	
+
         }
 
         public void showMenu(){
-                while(naam == null || naam.trim().isEmpty()) {
-                    // gives the optionPane when the input is NULL or empty
-                    naam = JOptionPane.showInputDialog("Welkom! " + "\n" + "Hoe heet je?");
-                } //TODO try-catch block when there is expantion
-                Speler speler = new Speler(naam); // A new speler is created with the name
-                JOptionPane.showMessageDialog(null, speler.getNaam() + " heeft als score: " + speler.getScore(), speler.getNaam(), 1);
-
-
+            String xString = JOptionPane.showInputDialog("X coordinaat van het punt: ");
+            String yString = JOptionPane.showInputDialog("Y coordinaat van het punt: ");
+            int xInt = Integer.parseInt(xString);
+            int yInt = Integer.parseInt(yString);
+            Punt punt = new Punt(xInt, yInt);
+            JOptionPane.showMessageDialog(null, "U heeft een correct punt gemaakt: " + punt.toString());
         }
+
+
 }
