@@ -31,7 +31,7 @@ public class Speler {
 	
 	
 	public void addToScore(int getal) throws DomainException  {
-		if (this.getScore() < Math.abs(getal)) {
+		if (this.getScore() + getal < 0) {
 			throw new DomainException("Score kan niet negatief worden.");
 		}
 		this.setScore(this.getScore() + getal);
