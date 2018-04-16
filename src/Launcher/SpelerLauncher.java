@@ -1,7 +1,6 @@
 package Launcher;
 
 import domain.Speler;
-
 import javax.swing.*;
 
 
