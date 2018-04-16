@@ -35,7 +35,7 @@ public class Rechthoek {
         return breedte;
     }
 
-    private int setBreedte(int breedte){
+    private void setBreedte(int breedte){
         if(breedte < 0){
             throw new IllegalArgumentException("De breedte kan niet negatief zijn");
         }else{
