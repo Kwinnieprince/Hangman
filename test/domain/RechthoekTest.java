@@ -7,7 +7,7 @@ import org.junit.Test;
 
 public class RechthoekTest {
 
-/*	private Punt linkerBovenhoek;
+	private Punt linkerBovenhoek;
 	private int breedte, hoogte;
 	private Rechthoek rechthoek;
 
@@ -81,5 +81,5 @@ public class RechthoekTest {
 	@Test
 	public void equals_moet_false_teruggeven_als_parameter_null(){
 		assertFalse(rechthoek.equals(null));
-	}*/
+	}
 }

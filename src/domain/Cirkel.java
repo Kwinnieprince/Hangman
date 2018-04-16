@@ -31,13 +31,14 @@ public class Cirkel {
 
     @Override
     public boolean equals(Object object){
-      return false;  // just to compile still TODO
+      if(object == null){
+          return false;
+      }
+      return this.radius == ((Cirkel)object).getRadius() && this.middelpunt == ((Cirkel) object).getMiddelpunt();
     }
 
     @Override
     public String toString(){
         return "Cirkel: middelpunt: (" + getMiddelpunt().getX() + ", " + getMiddelpunt().getY() + ") - straal: " + getRadius();
-
-
     }
 }
