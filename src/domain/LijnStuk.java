@@ -1,5 +1,7 @@
 package domain;
 
+import java.awt.*;
+
 public class LijnStuk extends Vorm {
 	private Punt startPunt;
 	private Punt eindPunt;
@@ -33,6 +35,11 @@ public class LijnStuk extends Vorm {
 		return omhullende;
 	}
 	
+	@Override
+	public Omhullende getOmhullende() {
+		return null;
+	}
+
 	@Override
 	public boolean equals(Object o) {
 		if (o == null) return false;

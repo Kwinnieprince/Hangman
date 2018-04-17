@@ -1,5 +1,7 @@
 package domain;
 
+import java.awt.*;
+
 public class Driehoek extends Vorm {
 	
 	private Punt hoekPunt1;
@@ -38,7 +40,16 @@ public class Driehoek extends Vorm {
 		this.hoekPunt2 = hoekPunt2;
 		this.hoekPunt3 = hoekPunt3;
 	}
-	
+
+	public void teken(Graphics graphics){
+
+	}
+
+	@Override
+	public Omhullende getOmhullende() {
+		return null;
+	}
+
 	@Override
 	public boolean equals(Object o) {
 		Driehoek d;
