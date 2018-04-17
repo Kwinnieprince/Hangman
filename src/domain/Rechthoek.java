@@ -16,7 +16,8 @@ public class Rechthoek {
     }
 
     private void setLinkerBovenhoek(Punt linkerBovenhoek){
-        this.linkerBovenhoek = linkerBovenhoek;
+    	if (linkerBovenhoek == null) throw new DomainException("linkerBovenhoek mag niet 0 zijn");
+    	this.linkerBovenhoek = linkerBovenhoek;
     }
 
     public int getHoogte(){
@@ -25,7 +26,7 @@ public class Rechthoek {
 
     private void setHoogte(int hoogte){
         if(hoogte < 0){
-            throw new IllegalArgumentException("De hoogte kan niet minder dan 0 zijn");
+            throw new DomainException("De hoogte kan niet minder dan 0 zijn");
         }else{
             this.hoogte = hoogte;
         }
@@ -35,17 +36,15 @@ public class Rechthoek {
         return breedte;
     }
 
-    private void setBreedte(int breedte){
-        if(breedte < 0){
-            throw new IllegalArgumentException("De breedte kan niet negatief zijn");
-        }else{
-            this.breedte = breedte;
-        }
+    private void setBreedte(int breedte) throws DomainException {
+        if(breedte < 0) throw new DomainException("De breedte kan niet negatief zijn");
+        this.breedte = breedte;
     }
 
     @Override
     public boolean equals(Object object){
-        return  false;
+        if (object == null) return false;
+        return this.breedte == ((Rechthoek)object).getBreedte() && this.hoogte == ((Rechthoek)object).getHoogte() && this.linkerBovenhoek == ((Rechthoek)object).getLinkerBovenhoek();
     }
 
     @Override
