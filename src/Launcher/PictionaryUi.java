@@ -1,6 +1,7 @@
 package Launcher;
 
 import domain.*;
+import jdk.nashorn.internal.scripts.JO;
 
 import javax.swing.*;
 
@@ -35,6 +36,23 @@ public class PictionaryUi {
             Rechthoek rechthoek = new Rechthoek(punt, breedteInt, hoogteInt);
             JOptionPane.showMessageDialog(null, "U heeft een correcte rechthoek gemaakt: " + rechthoek.toString());
 
+        }
+        
+        public void ifLijnStuk() {
+        	boolean aangemaakt = false;
+        	LijnStuk lijnStuk = null;
+        	while (!aangemaakt) {
+        		try {
+	        	int xInt2 = Integer.parseInt(JOptionPane.showInputDialog("X coordinaat van het eindpunt van het LijnStuk: "));
+	            int yInt2 = Integer.parseInt(JOptionPane.showInputDialog("Y coordinaat van het eindpunt van het LijnStuk: "));
+	            Punt punt2 = new Punt(xInt2, yInt2);
+	            lijnStuk = new LijnStuk(punt, punt2);
+	            aangemaakt = true;
+        		} catch (DomainException e) {
+        			JOptionPane.showMessageDialog(null, e + "\nProbeer opnieuw");
+        		}
+        	}
+            JOptionPane.showMessageDialog(null, "U heeft een correct LijnStuk gemaakt: " + lijnStuk.toString());
         }
 
 

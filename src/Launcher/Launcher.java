@@ -17,7 +17,7 @@ public class Launcher {
         JOptionPane.showMessageDialog(null, speler.getNaam() + " heeft als score: " + speler.getScore(), speler.getNaam(), 1);
         PictionaryUi player = new PictionaryUi(speler); //makes a new PictionaryUi
 
-        Object[] shapes = {"Circkel", "Rechthoek"};
+        Object[] shapes = {"Circkel", "Rechthoek", "LijnStuk"};
         Object keuze = JOptionPane.showInputDialog(null, "Wat wilt u tekenen? ", "input", JOptionPane.INFORMATION_MESSAGE, null, shapes, null);
 
             while(pictionaryBool == false){
@@ -25,8 +25,10 @@ public class Launcher {
                     player.showMenu();
                     if (keuze == "Circkel") {
                         player.ifCirckel();
-                    }else {
+                    }else if(keuze == "Rechthoek") {
                         player.ifRechthoek();
+                    } else {
+                    	player.ifLijnStuk();
                     }
                         pictionaryBool = true;
                 }catch (NumberFormatException e){
