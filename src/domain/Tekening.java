@@ -1,7 +1,5 @@
 package domain;
 
-import com.sun.java.browser.dom.DOMAccessException;
-
 import java.util.ArrayList;
 
 public class Tekening {

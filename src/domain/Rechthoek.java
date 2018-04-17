@@ -1,5 +1,7 @@
 package domain;
 
+import java.awt.*;
+
 public class Rechthoek extends Vorm {
     private int breedte;
     private int hoogte;
@@ -36,6 +38,10 @@ public class Rechthoek extends Vorm {
     private void setBreedte(int breedte)throws DomainException{
         if(breedte < 1) throw new DomainException("De breedte moet minstens 1 zijn.");
         this.breedte = breedte;
+    }
+
+    public void teken(Graphics graphics){
+
     }
 
     @Override

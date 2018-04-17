@@ -1,16 +1,18 @@
 package domain;
 
+import java.awt.*;
+
 public class Cirkel extends Vorm {
     private int radius;
     private Punt middelpunt;
 
     public Cirkel(Punt middelpunt, int radius){
-        this.middelpunt = middelpunt;
+        setMiddelpunt(middelpunt);
         setRadius(radius);
     }
 
     public void setMiddelpunt(Punt middelpunt){
-
+        this.middelpunt = middelpunt;
     }
 
     public Punt getMiddelpunt(){
@@ -20,6 +22,10 @@ public class Cirkel extends Vorm {
     private void setRadius(int radius){
         if (radius < 0) throw new IllegalArgumentException("de radius kan niet kleiner zijn dan 0");
         this.radius = radius;
+    }
+
+    public void teken(Graphics graphics){
+
     }
 
     public int getRadius(){

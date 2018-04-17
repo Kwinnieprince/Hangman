@@ -1,5 +1,7 @@
 package domain;
 
+import java.awt.*;
+
 public class LijnStuk extends Vorm {
 	private Punt startPunt;
 	private Punt eindPunt;
@@ -23,6 +25,7 @@ public class LijnStuk extends Vorm {
 		return this.eindPunt;
 	}
 	
+	@Override
 	public Omhullende getOmhullende() {
 		int minX = Math.min(this.startPunt.getX(), this.eindPunt.getX());
 		int minY = Math.min(this.startPunt.getY(), this.eindPunt.getY());
@@ -32,7 +35,7 @@ public class LijnStuk extends Vorm {
 		Omhullende omhullende = new Omhullende(positieLinksBoven, breedte, hoogte);
 		return omhullende;
 	}
-	
+
 	@Override
 	public boolean equals(Object o) {
 		if (o == null) return false;

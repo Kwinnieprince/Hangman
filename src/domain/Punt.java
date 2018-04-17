@@ -1,6 +1,6 @@
 package domain;
 
-public class Punt {
+public class Punt extends Vorm{
 	private int x;
 	private int y;
 	
@@ -16,7 +16,12 @@ public class Punt {
 	public int getY() {
 		return this.y;
 	}
-	
+
+	@Override
+	public Omhullende getOmhullende() {
+		return null;
+	}
+
 	@Override
 	public boolean equals(Object object) {
 		if (object == null) return false;

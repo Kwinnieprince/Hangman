@@ -1,4 +1,4 @@
-package Launcher;
+package launcher;
 
 import javax.swing.*;
 import  domain.*;
