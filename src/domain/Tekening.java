@@ -1,5 +1,7 @@
 package domain;
 
+import com.sun.java.browser.dom.DOMAccessException;
+
 import java.util.ArrayList;
 
 public class Tekening {
@@ -12,7 +14,15 @@ public class Tekening {
     private ArrayList<Vorm> vormen;
 
     public Tekening(String naam){
-        this.naam = naam;
+        setNaam(naam);
+    }
+
+    private void setNaam(String naam){
+        if(naam == null || naam.trim().isEmpty()){
+            throw new DomainException("De naam kan niet leeg zijn");
+        }else{
+            this.naam = naam;
+        }
     }
 
     public String getNaam(){
