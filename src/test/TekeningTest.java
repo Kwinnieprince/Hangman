@@ -17,6 +17,8 @@ public class TekeningTest {
 	private Vorm raambalk1;
 	private Vorm raambalk2;
 	private Vorm schouwNietInTekening;
+	private Vorm rechthoekBuitenTekening;
+	private Vorm cirkelBuitenTekening;
 	
 	@Before
 	public void setUp() {
@@ -28,8 +30,22 @@ public class TekeningTest {
 		raambalk1 = new LijnStuk(new Punt(210, 250), new Punt(290, 250));
 		raambalk2 = new LijnStuk(new Punt(250, 220), new Punt(250, 280));
 		schouwNietInTekening = new Rechthoek(new Punt(150, 150), 20,40);
+		rechthoekBuitenTekening = new Rechthoek(new Punt(500,500), 20,40);
+		cirkelBuitenTekening = new Cirkel(new Punt(5,5),7);
 	}
 
+	@Test (expected = IllegalArgumentException.class)
+	public void Tekening_moet_exception_gooien_als_vorm_buiten_tekenvlak() {
+		Tekening error = new Tekening("error");
+		error.voegToe(rechthoekBuitenTekening);
+	}
+	
+	@Test (expected = IllegalArgumentException.class)
+	public void Tekening_moet_exception_gooien_als_vorm_deels_buiten_tekenvlak_() {
+		Tekening error = new Tekening("error");
+		error.voegToe(cirkelBuitenTekening);
+	}
+	
 	@Test
 	public void Tekening_moet_een_tekening_aanmaken_met_een_geldige_naam_en_0_vormen() {
 		Tekening huis = new Tekening("huis");
@@ -101,6 +117,7 @@ public class TekeningTest {
 		huisMetSchouw.verwijder(schouwNietInTekening);
 		assertTrue(huis.equals(huisMetSchouw));
 	}
+	
 
 
 	public Tekening createHuisMetSchouw() {

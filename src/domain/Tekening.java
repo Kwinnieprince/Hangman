@@ -29,6 +29,10 @@ public class Tekening implements Drawable {
     }
 
     public void voegToe(Vorm vorm){
+    	if(vorm.getOmhullende().getMinY() < Tekening.MIN_Y ||
+    	   vorm.getOmhullende().getMinX() < Tekening.MIN_X ||
+           vorm.getOmhullende().getMaxY() > Tekening.MAX_Y ||
+    	   vorm.getOmhullende().getMaxX() > Tekening.MAX_X) throw new IllegalArgumentException("vorm valt buiten tekening.");
         vormen.add(vorm);
     }
 
