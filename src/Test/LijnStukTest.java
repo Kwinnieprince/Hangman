@@ -1,4 +1,6 @@
-package domain;
+package Test;
+
+import domain.*;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -41,6 +43,18 @@ public class LijnStukTest {
 	public void equals_moet_false_teruggeven_als_parameter_null(){
 		LijnStuk lijnStuk = new LijnStuk(punt1, punt2);
 		assertFalse(lijnStuk.equals(null));
+	}
+	
+	@Test (expected = DomainException.class)
+	public void LijnStuk_moet_exception_gooien_als_start_en_eindpunt_null() {
+		new LijnStuk(null, null);
+	}
+	
+	@Test
+	public void LijnStuk_maakt_aan_met_juiste_waardes_voor_punten() {
+		LijnStuk LijnStuk = new LijnStuk(punt1, punt2);
+		assertEquals(punt1, LijnStuk.getStartPunt());
+		assertEquals(punt2, LijnStuk.getEindPunt());
 	}
 }
 	
