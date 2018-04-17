@@ -26,8 +26,8 @@ public class Omhullende {
 		this.hoogte = hoogte;
 	}
 	
-	@Override
-	public boolean Equals(Object object) {
+	public boolean equals(Object object) {
+		if(object == null)return false;
 		Omhullende omhullende = (Omhullende)object;
 		return this.positieLinksBoven == omhullende.getLinkerBovenhoek() && this.breedte == omhullende.getBreedte() && this.hoogte == omhullende.getHoogte();
 	}
