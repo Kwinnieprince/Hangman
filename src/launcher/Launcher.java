@@ -8,15 +8,23 @@ public class Launcher {
 
     public static void main(String[] args){
         boolean pictionaryBool = false;
-
-        String naam = JOptionPane.showInputDialog("Welkom! " + "\n" + "Hoe heet je?");
+        String naam = null;
         while(naam == null || naam.trim().isEmpty()) {
             // gives the optionPane when the input is NULL or empty
             naam = JOptionPane.showInputDialog("Welkom! " + "\n" + "Hoe heet je?");
-        } //TODO try-catch block when there is expansion
+        }
         Speler speler = new Speler(naam); // A new speler is created with the name
+        Object[] gameChoise = {"Pictionary", "Hangman"};
+        Object keuzeSpel = JOptionPane.showInputDialog(null, "Dag " + speler.getNaam() + ", welk wpel wil je spelen?", "keuze spel", JOptionPane.INFORMATION_MESSAGE, null, gameChoise, null);
+
+        if(keuzeSpel == "Pictionary"){
+
+        }else{
+
+        }
         String tekeningNaam = JOptionPane.showInputDialog("geef de naam van de tekening.");
         Tekening tekening = new Tekening(tekeningNaam);
+
         JOptionPane.showMessageDialog(null, speler.getNaam() + " heeft als score: " + speler.getScore(), speler.getNaam(), 1);
         PictionaryUi player = new PictionaryUi(speler, tekening); //makes a new PictionaryUi
 
