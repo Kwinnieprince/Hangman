@@ -3,13 +3,13 @@ package test;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
-
+import domain.*;
 import org.junit.Test;
 
 
 public class HintWoordTest {
 
-	@Test
+	/*@Test
 	public void HintWoord_moet_HintWoord_aanmaken_waarvan_alle_letters_verborgen_zijn() {
 		String woord = "test";
 		
@@ -77,6 +77,6 @@ public class HintWoordTest {
 		assertTrue(hint.raad('s'));
 		
 		assertTrue(hint.isGeraden());
-	}
+	}*/
 
 }

@@ -17,37 +17,38 @@ public class Launcher {
         Object[] gameChoise = {"Pictionary", "Hangman"};
         Object keuzeSpel = JOptionPane.showInputDialog(null, "Dag " + speler.getNaam() + ", welk wpel wil je spelen?", "keuze spel", JOptionPane.INFORMATION_MESSAGE, null, gameChoise, null);
 
-        if(keuzeSpel == "Pictionary"){
-
+        if(keuzeSpel == "Hangman"){
+            HangManUi hangManUi = new HangManUi(speler);
+            hangManUi.guess();
         }else{
+            String tekeningNaam = JOptionPane.showInputDialog("geef de naam van de tekening.");
+            Tekening tekening = new Tekening(tekeningNaam);
 
-        }
-        String tekeningNaam = JOptionPane.showInputDialog("geef de naam van de tekening.");
-        Tekening tekening = new Tekening(tekeningNaam);
+            JOptionPane.showMessageDialog(null, speler.getNaam() + " heeft als score: " + speler.getScore(), speler.getNaam(), 1);
+            PictionaryUi player = new PictionaryUi(speler, tekening); //makes a new PictionaryUi
 
-        JOptionPane.showMessageDialog(null, speler.getNaam() + " heeft als score: " + speler.getScore(), speler.getNaam(), 1);
-        PictionaryUi player = new PictionaryUi(speler, tekening); //makes a new PictionaryUi
+            Object[] shapes = {"Circkel", "Rechthoek", "LijnStuk"};
+            Object keuze = JOptionPane.showInputDialog(null, "Wat wilt u tekenen? ", "input", JOptionPane.INFORMATION_MESSAGE, null, shapes, null);
 
-        Object[] shapes = {"Circkel", "Rechthoek", "LijnStuk"};
-        Object keuze = JOptionPane.showInputDialog(null, "Wat wilt u tekenen? ", "input", JOptionPane.INFORMATION_MESSAGE, null, shapes, null);
-
-            while(pictionaryBool == false){
-                try{
-                    player.showMenu();
-                    if (keuze == "Circkel") {
-                        player.ifCirckel();
-                    }else if(keuze == "Rechthoek") {
-                        player.ifRechthoek();
-                    } else {
-                    	player.ifLijnStuk();
-                    }
+                while(pictionaryBool == false){
+                    try{
+                        player.showMenu();
+                        if (keuze == "Circkel") {
+                            player.ifCirckel();
+                        }else if(keuze == "Rechthoek") {
+                            player.ifRechthoek();
+                        } else {
+                            player.ifLijnStuk();
+                        }
                         pictionaryBool = true;
-                }catch (NumberFormatException e){
-                    JOptionPane.showMessageDialog(null, "U heeft geen geldig punt aangemaakt probeer opnieuw!", speler.getNaam(), 0);
+                    }catch (NumberFormatException e){
+                        JOptionPane.showMessageDialog(null, "U heeft geen geldig punt aangemaakt probeer opnieuw!", speler.getNaam(), 0);
+                    }
                 }
-            }
 
+            }
         }
+
 
     }
 
