@@ -46,6 +46,6 @@ public class Rechthoek extends Vorm {
 
     @Override
     public String toString(){
-        return null;
+    	return "Rechthoek: linkerbovenhoek" + this.linkerBovenhoek.toString() + " hoogte: " + this.hoogte +" breete:" + this.breedte;
     }
 }
