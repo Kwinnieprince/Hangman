@@ -30,6 +30,7 @@ public class LijnStuk extends Vorm {
 
 	}
 
+	@Override
 	public Omhullende getOmhullende() {
 		int minX = Math.min(this.startPunt.getX(), this.eindPunt.getX());
 		int minY = Math.min(this.startPunt.getY(), this.eindPunt.getY());
