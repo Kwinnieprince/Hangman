@@ -22,6 +22,6 @@ public class CirkelTest {
 	public void Cirkel_geeft_juiste_omhullende_terug() {
 		Cirkel cirkel = new Cirkel(punt, radius); 
 		Omhullende omhullende = cirkel.getOmhullende();
-		assertFalse(omhullende.equals(cirkel.getOmhullende()));
+		assertTrue(omhullende.equals(cirkel.getOmhullende()));
 	}
 }

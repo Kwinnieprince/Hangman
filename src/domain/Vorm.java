@@ -8,9 +8,9 @@ public abstract class Vorm {
 			return true;
 		} else return false;
 	}
-	
 
 	public String toString() {
 		return null;
 	}
+	public abstract Omhullende getOmhullende();
 }

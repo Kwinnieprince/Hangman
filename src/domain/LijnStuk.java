@@ -23,6 +23,16 @@ public class LijnStuk extends Vorm {
 		return this.eindPunt;
 	}
 	
+	public Omhullende getOmhullende() {
+		int minX = Math.min(this.startPunt.getX(), this.eindPunt.getX());
+		int minY = Math.min(this.startPunt.getY(), this.eindPunt.getY());
+		Punt positieLinksBoven = new Punt(minX, minY);
+		int breedte = Math.max(this.startPunt.getX(), this.eindPunt.getX()) - minX;
+		int hoogte = Math.max(this.startPunt.getY(), this.eindPunt.getY()) - minY;
+		Omhullende omhullende = new Omhullende(positieLinksBoven, breedte, hoogte);
+		return omhullende;
+	}
+	
 	@Override
 	public boolean equals(Object o) {
 		if (o == null) return false;
@@ -34,6 +44,6 @@ public class LijnStuk extends Vorm {
 	
 	@Override
 	public String toString() {
-		return "Lijn: startpunt: " + this.getStartPunt().toString() + " - eindpunt: " + this.getEindPunt().toString();
+		return "Lijn: startpunt: " + this.getStartPunt().toString() + " - eindpunt: " + this.getEindPunt().toString() + "\n" + this.getOmhullende().toString();
 	}
 }

@@ -51,6 +51,13 @@ public class LijnStukTest {
 	}
 	
 	@Test
+	public void LijnStuk_geeft_correcte_omhullende_terug() {
+		LijnStuk LijnStuk = new LijnStuk(punt1, punt2);
+		Omhullende omhullende = new Omhullende(new Punt(10, 20), 180, 10);
+		assertTrue(omhullende.equals(LijnStuk.getOmhullende()));
+	}
+	
+	@Test
 	public void LijnStuk_maakt_aan_met_juiste_waardes_voor_punten() {
 		LijnStuk LijnStuk = new LijnStuk(punt1, punt2);
 		assertEquals(punt1, LijnStuk.getStartPunt());
