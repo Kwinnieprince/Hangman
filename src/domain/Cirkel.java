@@ -28,11 +28,6 @@ public class Cirkel extends Vorm {
 
     }
 
-    @Override
-    public Omhullende getOmhullende() {
-        return null;
-    }
-
     public int getRadius(){
         return radius;
     }
