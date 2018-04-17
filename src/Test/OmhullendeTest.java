@@ -1,9 +1,13 @@
-package domain;
+package Test;
 
 import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import domain.DomainException;
+import domain.Omhullende;
+import domain.Punt;
 
 public class OmhullendeTest {
 
