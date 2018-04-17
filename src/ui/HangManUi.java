@@ -4,6 +4,8 @@ import domain.Speler;
 
 import javax.swing.*;
 
+import domain.WoordenLijst;
+
 public class HangManUi {
 
     private Speler speler;

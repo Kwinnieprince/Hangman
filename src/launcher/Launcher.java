@@ -1,6 +1,8 @@
 package launcher;
 
 import javax.swing.*;
+
+import db.WoordenLezer;
 import  domain.*;
 import ui.*;
 
