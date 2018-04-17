@@ -2,7 +2,7 @@ package domain;
 
 import java.awt.*;
 
-public class Driehoek extends Vorm {
+public class Driehoek extends Vorm implements Drawable {
 	
 	private Punt hoekPunt1;
 	private Punt hoekPunt2;

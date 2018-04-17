@@ -3,7 +3,7 @@ package domain;
 
 import java.awt.*;
 
-public class LijnStuk extends Vorm {
+public class LijnStuk extends Vorm implements Drawable {
 	private Punt startPunt;
 	private Punt eindPunt;
 	
