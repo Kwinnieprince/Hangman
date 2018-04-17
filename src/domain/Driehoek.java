@@ -68,7 +68,6 @@ public class Driehoek extends Vorm {
 		return "Driehoek: hoekpunt 1: " + this.hoekPunt1.toString() + " - hoekpunt 2: " + this.hoekPunt2.toString() + " - hoekpunt3: " + this.hoekPunt3.toString() + "\n" + this.getOmhullende().toString();
 	}
 
-	@Override
 	public Omhullende getOmhullende() {
 		int minX = Math.min(Math.min(this.hoekPunt1.getX(), this.hoekPunt2.getX()), this.hoekPunt3.getX());
 		int minY = Math.min(Math.min(this.hoekPunt1.getY(), this.hoekPunt2.getY()), this.hoekPunt3.getY());

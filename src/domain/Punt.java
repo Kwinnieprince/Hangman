@@ -17,7 +17,7 @@ public class Punt extends Vorm{
 		return this.y;
 	}
 
-	@Override
+
 	public Omhullende getOmhullende() {
 		return null;
 	}
