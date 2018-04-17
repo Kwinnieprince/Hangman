@@ -46,11 +46,6 @@ public class Driehoek extends Vorm {
 	}
 
 	@Override
-	public Omhullende getOmhullende() {
-		return null;
-	}
-
-	@Override
 	public boolean equals(Object o) {
 		Driehoek d;
 		if (o instanceof Driehoek) {

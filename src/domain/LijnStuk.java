@@ -25,6 +25,7 @@ public class LijnStuk extends Vorm {
 		return this.eindPunt;
 	}
 	
+	@Override
 	public Omhullende getOmhullende() {
 		int minX = Math.min(this.startPunt.getX(), this.eindPunt.getX());
 		int minY = Math.min(this.startPunt.getY(), this.eindPunt.getY());
@@ -33,11 +34,6 @@ public class LijnStuk extends Vorm {
 		int hoogte = Math.max(this.startPunt.getY(), this.eindPunt.getY()) - minY;
 		Omhullende omhullende = new Omhullende(positieLinksBoven, breedte, hoogte);
 		return omhullende;
-	}
-	
-	@Override
-	public Omhullende getOmhullende() {
-		return null;
 	}
 
 	@Override
