@@ -1,7 +1,6 @@
-package Launcher;
+package launcher;
 
 import domain.*;
-import jdk.nashorn.internal.scripts.JO;
 
 import javax.swing.*;
 
