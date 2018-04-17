@@ -1,8 +1,6 @@
 package domain;
 
-public abstract class Vorm {
-
-	public abstract Omhullende getOmhullende();
+public abstract class Vorm implements Drawable {
 	
 	public boolean equals(Object o) {
 		if (o == null) return false;
