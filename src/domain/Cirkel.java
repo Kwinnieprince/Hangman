@@ -18,11 +18,8 @@ public class Cirkel {
     }
 
     private void setRadius(int radius){
-        if (radius < 0){
-            throw new IllegalArgumentException("de radius kan niet kleiner zijn dan 0");
-        }else{
-            this.radius = radius;
-        }
+        if (radius < 0) throw new IllegalArgumentException("de radius kan niet kleiner zijn dan 0");
+        this.radius = radius;
     }
 
     public int getRadius(){
@@ -31,9 +28,7 @@ public class Cirkel {
 
     @Override
     public boolean equals(Object object){
-      if(object == null){
-          return false;
-      }
+      if(object == null) return false;
       return this.radius == ((Cirkel)object).getRadius() && this.middelpunt == ((Cirkel) object).getMiddelpunt();
     }
 

@@ -19,9 +19,8 @@ public class Punt {
 	
 	@Override
 	public boolean equals(Object object) {
-		if (object == null) {
-			return false;
-		}
+		if (object == null) return false;
+		
 		return this.x == ((Punt) object).getX() && this.y == ((Punt) object).getY();
 	}
 	
