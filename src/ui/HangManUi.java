@@ -20,7 +20,7 @@ public class HangManUi {
     public void guess(){
         String givenLetter = JOptionPane.showInputDialog(null, "Rarara, welk woord zoeken we \n " + " TODO" + " \n Geef een letter:", "Hangman - " + speler.getNaam(), 1 );
 
-        //TODO implement wrong and right
+        // TODO implement wrong and right
     }
 
 }
