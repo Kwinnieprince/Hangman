@@ -50,6 +50,14 @@ public class Tekening {
 
     @Override
     public boolean equals(Object object){
+        if(object == null)return false;
+        
+        if(this.naam != ((Tekening)object).getNaam()) return false;
+        
+        for (Vorm vorm : vormen) {
+			if(!((Tekening)object).bevat(vorm)) return false;
+		}
+        
         return true;
     }
 

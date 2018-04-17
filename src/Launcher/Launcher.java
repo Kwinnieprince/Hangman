@@ -14,8 +14,10 @@ public class Launcher {
             naam = JOptionPane.showInputDialog("Welkom! " + "\n" + "Hoe heet je?");
         } //TODO try-catch block when there is expansion
         Speler speler = new Speler(naam); // A new speler is created with the name
+        String tekeningNaam = JOptionPane.showInputDialog("geef de naam van de tekening.");
+        Tekening tekening = new Tekening(tekeningNaam);
         JOptionPane.showMessageDialog(null, speler.getNaam() + " heeft als score: " + speler.getScore(), speler.getNaam(), 1);
-        PictionaryUi player = new PictionaryUi(speler); //makes a new PictionaryUi
+        PictionaryUi player = new PictionaryUi(speler, tekening); //makes a new PictionaryUi
 
         Object[] shapes = {"Circkel", "Rechthoek", "LijnStuk"};
         Object keuze = JOptionPane.showInputDialog(null, "Wat wilt u tekenen? ", "input", JOptionPane.INFORMATION_MESSAGE, null, shapes, null);
