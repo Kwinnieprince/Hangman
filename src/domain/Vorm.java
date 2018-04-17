@@ -1,6 +1,6 @@
 package domain;
 
-public abstract class Vorm {
+public abstract class Vorm implements Drawable {
 
 	public abstract Omhullende getOmhullende();
 	
@@ -14,4 +14,6 @@ public abstract class Vorm {
 	public String toString() {
 		return null;
 	}
+	
+	public abstract Omhullende getOmhullende();
 }

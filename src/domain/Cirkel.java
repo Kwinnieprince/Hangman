@@ -32,6 +32,7 @@ public class Cirkel extends Vorm {
         return radius;
     }
 
+    @Override
     public Omhullende getOmhullende() {
     	Punt positieLinksBoven = new Punt(this.getMiddelpunt().getX()-this.getRadius(), this.getMiddelpunt().getY()-this.getRadius());
     	int breedte = this.radius*2;

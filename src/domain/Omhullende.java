@@ -61,19 +61,19 @@ public class Omhullende {
 		return this.breedte;
 	}
 	
-	public int getMinimumX() {
+	public int getMinX() {
 		return positieLinksBoven.getX();
 	}
 	
-	public int getMaximumX() {
+	public int getMaxX() {
 		return positieLinksBoven.getX() + this.breedte;
 	}
 	
-	public int getMinimumY() {
+	public int getMinY() {
 		return positieLinksBoven.getY();
 	}
 	
-	public int getMaximumY() {
+	public int getMaxY() {
 		return positieLinksBoven.getY() + hoogte;
 	}
 }

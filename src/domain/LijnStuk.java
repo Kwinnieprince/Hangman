@@ -1,5 +1,6 @@
 package domain;
 
+
 import java.awt.*;
 
 public class LijnStuk extends Vorm {
@@ -24,7 +25,11 @@ public class LijnStuk extends Vorm {
 	public Punt getEindPunt() {
 		return this.eindPunt;
 	}
-	
+
+	public void teken(Graphics graphics){
+
+	}
+
 	@Override
 	public Omhullende getOmhullende() {
 		int minX = Math.min(this.startPunt.getX(), this.eindPunt.getX());

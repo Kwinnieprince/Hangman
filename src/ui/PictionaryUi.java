@@ -1,6 +1,7 @@
-package launcher;
+package ui;
 
 import domain.*;
+import jdk.nashorn.internal.scripts.JO;
 
 import javax.swing.*;
 
