@@ -60,6 +60,7 @@ public class Tekening implements Drawable {
     @Override
     public boolean equals(Object object){
         if(object == null)return false;
+        if(((Tekening)object).getAantalVormen() != this.getAantalVormen()) return false;
         
         for (Vorm vorm : vormen) {
 			if(!((Tekening)object).bevat(vorm)) return false;
