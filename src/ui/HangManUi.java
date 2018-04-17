@@ -9,9 +9,12 @@ import domain.WoordenLijst;
 public class HangManUi {
 
     private Speler speler;
+    private WoordenLijst woordenLijst; //List of words players has to guess one word from
 
-    public HangManUi(Speler speler){
+    public HangManUi(Speler speler, WoordenLijst woordenLijst){
         this.speler = speler;
+        if (woordenLijst == null) throw new UiException("Geen geldige woordenLijst");
+        this.woordenLijst = woordenLijst;
     }
 
     public void guess(){
