@@ -26,6 +26,14 @@ public class Cirkel extends Vorm {
         return radius;
     }
 
+    public Omhullende getOmhullende() {
+    	Punt positieLinksBoven = new Punt(this.getMiddelpunt().getX()-this.getRadius(), this.getMiddelpunt().getY()-this.getRadius());
+    	int breedte = this.radius*2;
+    	int hoogte = this.radius*2;
+    	Omhullende omhullende = new Omhullende(positieLinksBoven, breedte, hoogte); 
+    	return omhullende;
+    }
+    
     @Override
     public boolean equals(Object object){
       if(object == null) return false;
@@ -34,6 +42,6 @@ public class Cirkel extends Vorm {
 
     @Override
     public String toString(){
-        return "Cirkel: middelpunt: (" + getMiddelpunt().getX() + ", " + getMiddelpunt().getY() + ") - straal: " + getRadius();
+        return "Cirkel: middelpunt: (" + getMiddelpunt().getX() + ", " + getMiddelpunt().getY() + ") - straal: " + getRadius() + "\n" + this.getOmhullende().toString();
     }
 }
