@@ -24,20 +24,17 @@ public class Rechthoek {
         return hoogte;
     }
 
-    private void setHoogte(int hoogte){
-        if(hoogte < 0){
-            throw new DomainException("De hoogte kan niet minder dan 0 zijn");
-        }else{
-            this.hoogte = hoogte;
-        }
+    private void setHoogte(int hoogte)throws DomainException{
+    	if(hoogte < 1) throw new DomainException("De hoogte moet minstens 1 zijn.");
+    	this.hoogte = hoogte;
     }
 
     public int getBreedte() {
         return breedte;
     }
 
-    private void setBreedte(int breedte) throws DomainException {
-        if(breedte < 0) throw new DomainException("De breedte kan niet negatief zijn");
+    private void setBreedte(int breedte)throws DomainException{
+        if(breedte < 1) throw new DomainException("De breedte moet minstens 1 zijn.");
         this.breedte = breedte;
     }
 
