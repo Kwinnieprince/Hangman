@@ -26,10 +26,27 @@ public class Omhullende {
 		this.hoogte = hoogte;
 	}
 	
+	@Override
 	public boolean equals(Object object) {
+		/*
 		if(object == null)return false;
 		Omhullende omhullende = (Omhullende)object;
 		return this.positieLinksBoven == omhullende.getLinkerBovenhoek() && this.breedte == omhullende.getBreedte() && this.hoogte == omhullende.getHoogte();
+	*/
+		boolean b = false;
+		if (object == null) return b;
+		if (object instanceof Omhullende) {
+			b = true;
+			if (!this.getLinkerBovenhoek().equals(((Omhullende)object).getLinkerBovenhoek())) b = false;
+			if (this.getBreedte() != (((Omhullende)object).getBreedte())) b = false;
+			if (this.getHoogte() != ((Omhullende)object).getHoogte()) b = false;
+		}
+		return b;
+	}
+	
+	@Override
+	public String toString() {
+		return "Omhullende: " + this.getLinkerBovenhoek() + " - " + breedte + " - " + hoogte;
 	}
 	
 	public Punt getLinkerBovenhoek() {
