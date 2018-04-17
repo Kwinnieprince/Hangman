@@ -3,6 +3,7 @@ package Test;
 import static org.junit.Assert.*;
 
 import domain.DomainException;
+import domain.Omhullende;
 import domain.Punt;
 import domain.Rechthoek;
 import org.junit.Before;
@@ -84,5 +85,11 @@ public class RechthoekTest {
 	@Test
 	public void equals_moet_false_teruggeven_als_parameter_null(){
 		assertFalse(rechthoek.equals(null));
+	}
+	
+	@Test
+	public void getOmhullende_moet_juiste_omhullende_terug_geven() {
+		Omhullende omhullende = new Omhullende(this.linkerBovenhoek, this.breedte, this.hoogte);
+		assertEquals(this.rechthoek.getOmhullende(), omhullende);
 	}
 }
