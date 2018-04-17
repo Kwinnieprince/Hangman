@@ -11,9 +11,10 @@ public class PictionaryUi {
 	int xInt;
 	int yInt;
 	Punt punt;
+	Tekening tekening;
 
-        public PictionaryUi(Speler speler){
-
+        public PictionaryUi(Speler speler, Tekening tekening){
+        	
         }
 
         public void showMenu() {
@@ -54,6 +55,4 @@ public class PictionaryUi {
         	}
             JOptionPane.showMessageDialog(null, "U heeft een correct LijnStuk gemaakt: " + lijnStuk.toString());
         }
-
-
 }

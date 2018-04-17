@@ -1,18 +1,28 @@
 package domain;
 
+import com.sun.java.browser.dom.DOMAccessException;
+
 import java.util.ArrayList;
 
-public class Tekening{
+public class Tekening {
 
     private String naam;
-    private int MIN_X;
-    private int MIN_Y;
-    private int MAX_X;
-    private int MAX_Y;
+    private static final int MIN_X = 0;
+    private static final int MIN_Y = 0;
+    private static final int MAX_X = 399;
+    private static final int MAX_Y = 399;
     private ArrayList<Vorm> vormen;
 
     public Tekening(String naam){
+        setNaam(naam);
+    }
 
+    private void setNaam(String naam){
+        if(naam == null || naam.trim().isEmpty()){
+            throw new DomainException("De naam kan niet leeg zijn");
+        }else{
+            this.naam = naam;
+        }
     }
 
     public String getNaam(){
@@ -20,32 +30,44 @@ public class Tekening{
     }
 
     public void voegToe(Vorm vorm){
-
+        vormen.add(vorm);
     }
 
     public Vorm getVorm(int index){
-        return null;
+        return vormen.get(index);
     }
 
     public int getAantalVormen(){
-        return 1;
+        int i = 0;
+        for (Vorm vorm: vormen) {
+            i++;
+        }
+        return i;
     }
 
     public void verwijder(Vorm vorm){
-
+        vormen.remove(vorm);
     }
 
     public boolean bevat(Vorm vorm){
-        return  false;
+       return vormen.contains(vorm);
     }
 
     @Override
     public String toString(){
-        return null;
+        return "tekening met naam " + naam + " bestaat uit " + getAantalVormen() + ": ";
     }
 
     @Override
     public boolean equals(Object object){
+        if(object == null)return false;
+        
+        if(this.naam != ((Tekening)object).getNaam()) return false;
+        
+        for (Vorm vorm : vormen) {
+			if(!((Tekening)object).bevat(vorm)) return false;
+		}
+        
         return true;
     }
 
