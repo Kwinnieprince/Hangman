@@ -65,5 +65,25 @@ public class WoordenLijstTest {
 
 		woordenlijstMetGeldigeWoorden.voegToe(woordAlInLijst);
 	}
+	
+	@Test
+	public void WoordenLijst_met_een_woord_geeft_woord_terug_by_getRandom() {
+		assertEquals(woordenlijstMetEenGeldigWoord.getRandomWoord(), "test");
+	}
+	
+	@Test
+	public void WoordenLijst_zonder_woorden_moet_null_teruggeven_by_getRandom() {
+		assertEquals(woordenlijstLeeg.getRandomWoord(), null);
+	}
+	
+	@Test
+	public void WoordenLijst_met_meerdere_woorden_geeft_willekeurig_woord_terug_by_getRandom() {
+		boolean alleWoordenGelijk = true;
+		String randomWoord = woordenlijstMetGeldigeWoorden.getRandomWoord();
+		for (int i = 0; i < 100; i++) {
+			if (!randomWoord.equals(woordenlijstMetGeldigeWoorden.getRandomWoord())) alleWoordenGelijk = false;
+		}
+		assertFalse(alleWoordenGelijk);
+	}
 
 }
