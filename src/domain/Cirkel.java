@@ -44,7 +44,12 @@ public class Cirkel extends Vorm {
     @Override
     public boolean equals(Object object){
       if(object == null) return false;
-      return this.radius == ((Cirkel)object).getRadius() && this.middelpunt == ((Cirkel) object).getMiddelpunt();
+      if(object instanceof Cirkel) {
+    	  return this.radius == ((Cirkel)object).getRadius() && this.middelpunt.equals(((Cirkel) object).getMiddelpunt());
+      }
+      else {
+    	  return false;
+      }
     }
 
     @Override
