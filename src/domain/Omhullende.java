@@ -43,4 +43,20 @@ public class Omhullende {
 	public int getBreedte() {
 		return this.breedte;
 	}
+	
+	public int getMinimumX() {
+		return positieLinksBoven.getX();
+	}
+	
+	public int getMaximumX() {
+		return positieLinksBoven.getX() + this.breedte;
+	}
+	
+	public int getMinimumY() {
+		return positieLinksBoven.getY();
+	}
+	
+	public int getMaximumY() {
+		return positieLinksBoven.getY() + hoogte;
+	}
 }
