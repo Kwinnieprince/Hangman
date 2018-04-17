@@ -15,19 +15,30 @@ public class Launcher {
         } //TODO try-catch block when there is expansion
         Speler speler = new Speler(naam); // A new speler is created with the name
         JOptionPane.showMessageDialog(null, speler.getNaam() + " heeft als score: " + speler.getScore(), speler.getNaam(), 1);
-
         PictionaryUi player = new PictionaryUi(speler); //makes a new PictionaryUi
-        while(pictionaryBool == false){
-            try{
-                player.showMenu();
-                pictionaryBool = true;
-            }catch (NumberFormatException e){
-                JOptionPane.showMessageDialog(null, "U heeft geen geldig punt aangemaakt probeer opnieuw!", speler.getNaam(), 0);
+
+        Object[] shapes = {"Circkel", "Rechthoek"};
+        Object keuze = JOptionPane.showInputDialog(null, "Wat wilt u tekenen? ", "input", JOptionPane.INFORMATION_MESSAGE, null, shapes, null);
+
+            while(pictionaryBool == false){
+                try{
+                    player.showMenu();
+                    if (keuze == "Circkel") {
+                        player.ifCirckel();
+                    }else {
+                        player.ifRechthoek();
+                    }
+                        pictionaryBool = true;
+                }catch (NumberFormatException e){
+                    JOptionPane.showMessageDialog(null, "U heeft geen geldig punt aangemaakt probeer opnieuw!", speler.getNaam(), 0);
+                }
             }
+
         }
 
 
-    }
 
-}
+
+
+    }
 
