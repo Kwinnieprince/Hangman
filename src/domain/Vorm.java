@@ -14,5 +14,4 @@ public abstract class Vorm {
 	public String toString() {
 		return null;
 	}
-	public abstract Omhullende getOmhullende();
 }
