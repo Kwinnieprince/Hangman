@@ -12,4 +12,6 @@ public abstract class Vorm implements Drawable {
 	public String toString() {
 		return null;
 	}
+	
+	public abstract Omhullende getOmhullende();
 }
