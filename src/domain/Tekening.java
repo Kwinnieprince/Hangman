@@ -13,11 +13,12 @@ public class Tekening implements Drawable {
 
     public Tekening(String naam){
         setNaam(naam);
+        vormen = new ArrayList<Vorm>();
     }
 
     private void setNaam(String naam){
         if(naam == null || naam.trim().isEmpty()){
-            throw new DomainException("De naam kan niet leeg zijn");
+            throw new IllegalArgumentException("De naam kan niet leeg zijn");
         }else{
             this.naam = naam;
         }
@@ -59,8 +60,6 @@ public class Tekening implements Drawable {
     @Override
     public boolean equals(Object object){
         if(object == null)return false;
-        
-        if(this.naam != ((Tekening)object).getNaam()) return false;
         
         for (Vorm vorm : vormen) {
 			if(!((Tekening)object).bevat(vorm)) return false;

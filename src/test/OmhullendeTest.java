@@ -90,22 +90,22 @@ public class OmhullendeTest {
 	
 	@Test
 	public void setMaximumX_als_waarde_juist_zijn() {
-		assertEquals(omhullende.getMaximumX(),linkerBovenhoek.getX()+breedte);
+		assertEquals(omhullende.getMaxX(),linkerBovenhoek.getX()+breedte);
 	}
 	
 	@Test
 	public void setMaximumY_als_waarde_juist_zijn() {
-		assertEquals(omhullende.getMaximumY(),linkerBovenhoek.getY()+hoogte);
+		assertEquals(omhullende.getMaxY(),linkerBovenhoek.getY()+hoogte);
 	}
 	
 	@Test
 	public void setMinumX_als_waarde_juist_zijn() {
-		assertEquals(omhullende.getMinimumX(),linkerBovenhoek.getX());
+		assertEquals(omhullende.getMinX(),linkerBovenhoek.getX());
 	}
 	
 	@Test
 	public void setMinumY_als_waarde_juist_zijn() {
-		assertEquals(omhullende.getMinimumY(),linkerBovenhoek.getY());
+		assertEquals(omhullende.getMinY(),linkerBovenhoek.getY());
 	}
 	
 }

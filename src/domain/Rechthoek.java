@@ -47,7 +47,12 @@ public class Rechthoek extends Vorm {
     @Override
     public boolean equals(Object object){
         if (object == null) return false;
-        return this.breedte == ((Rechthoek)object).getBreedte() && this.hoogte == ((Rechthoek)object).getHoogte() && this.linkerBovenhoek == ((Rechthoek)object).getLinkerBovenhoek();
+        if(object instanceof Rechthoek) {
+        	return (this.breedte == ((Rechthoek)object).getBreedte() && this.hoogte == ((Rechthoek)object).getHoogte() && this.linkerBovenhoek == ((Rechthoek)object).getLinkerBovenhoek());
+        }
+        else {
+        	return false;
+        }
     }
 
     @Override
