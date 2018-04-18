@@ -9,7 +9,7 @@ import org.junit.Test;
 import domain.HintLetter;
 
 public class HintLetterTest {
-	/*@Test
+	@Test
 	public void HintLetter_moet_HintLetter_maken_die_niet_geraden_is() {
 		HintLetter letter = new HintLetter('a');
 
@@ -86,5 +86,5 @@ public class HintLetterTest {
 		HintLetter letter = new HintLetter('x');
 
 		assertEquals('x', letter.getLetter());
-	}*/
+	}
 }
