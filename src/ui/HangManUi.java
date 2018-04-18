@@ -1,5 +1,6 @@
 package ui;
 
+import domain.HintWoord;
 import domain.Speler;
 
 import javax.swing.*;
@@ -18,9 +19,25 @@ public class HangManUi {
     }
 
     public void guess(){
-        String givenLetter = JOptionPane.showInputDialog(null, "Rarara, welk woord zoeken we \n " + " TODO" + " \n Geef een letter:", "Hangman - " + speler.getNaam(), 1 );
-
-        // TODO implement wrong and right
+    	HintWoord woord = new HintWoord(this.woordenLijst.getRandomWoord());
+    	String juistOfFout = "";
+    	String letter = null;
+    	while(!woord.isGeraden()) {
+        	try {
+        		letter = JOptionPane.showInputDialog(null, juistOfFout + "Rarara, welk woord zoeken we \n " + woord + " \n Geef een letter:", "Hangman - " + speler.getNaam(), 1 );
+                if (letter == null || letter.trim().isEmpty() || letter.length() > 1) throw new UiException("Geen geldige letter");
+                else {
+                		if (woord.raad(letter.charAt(0))) {
+                			juistOfFout = "Super, doe zo voort!\n \n";
+                		} else {
+                			juistOfFout = "Helaas, volgende keer beter!\n \n";
+                		}
+                	}
+        	} catch (UiException e) {
+        		juistOfFout = e.getMessage() + "\n \n";
+        	}
+            }
+    	JOptionPane.showMessageDialog(null, "Goedzo! Je hebt het woord geraden.\n \n" + woord);
     }
 
 }

@@ -17,7 +17,7 @@ public class Launcher {
         }
         Speler speler = new Speler(naam); // A new speler is created with the name
         Object[] gameChoise = {"Pictionary", "Hangman"};
-        Object keuzeSpel = JOptionPane.showInputDialog(null, "Dag " + speler.getNaam() + ", welk wpel wil je spelen?", "keuze spel", JOptionPane.INFORMATION_MESSAGE, null, gameChoise, null);
+        Object keuzeSpel = JOptionPane.showInputDialog(null, "Dag " + speler.getNaam() + ", welk spel wil je spelen?", "keuze spel", JOptionPane.INFORMATION_MESSAGE, null, gameChoise, null);
 
         if(keuzeSpel == "Hangman"){
             HangManUi hangManUi = new HangManUi(speler, new WoordenLezer("Hangman").Lees());

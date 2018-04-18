@@ -13,7 +13,7 @@ public class HintLetter {
 
 	private void setLetter(char letter)throws DomainException {
 		String s = "" + letter;
-		boolean p = Pattern.matches("^[a-zA-Z]{1}$", s);
+		boolean p = Pattern.matches("^[a-zA-Z ]{1}$", s);
 		if(!p) throw new DomainException("Ongeldige letter.");
 		this.letter = letter;	
 	}
@@ -23,7 +23,7 @@ public class HintLetter {
 	}
 
 	public boolean raad(char c) {
-		String s = "" + letter;
+		String s = "" + c;
 		boolean p = Pattern.matches("^[a-zA-Z]{1}$", s);
 		if(!p) throw new DomainException("Ongeldige letter.");
 		if (this.isGeraden) return false;
@@ -35,6 +35,7 @@ public class HintLetter {
 
 	public Object toChar() {
 		if (this.isGeraden()) return this.getLetter();
+		if (this.letter == ' ') return "  ";
 		return '_';
 	}
 
