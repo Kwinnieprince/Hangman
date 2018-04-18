@@ -20,7 +20,7 @@ public class Launcher {
         Object keuzeSpel = JOptionPane.showInputDialog(null, "Dag " + speler.getNaam() + ", welk wpel wil je spelen?", "keuze spel", JOptionPane.INFORMATION_MESSAGE, null, gameChoise, null);
 
         if(keuzeSpel == "Hangman"){
-            HangManUi hangManUi = new HangManUi(speler);
+            HangManUi hangManUi = new HangManUi(speler, new WoordenLezer("Hangman").Lees());
             hangManUi.guess();
         }else{
             String tekeningNaam = JOptionPane.showInputDialog("geef de naam van de tekening.");

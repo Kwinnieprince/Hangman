@@ -3,16 +3,40 @@ package domain;
 import java.util.regex.*;
 
 public class HintLetter {
-	private String letter;
+	private char letter;
+	private boolean isGeraden;
 	
-	public HintLetter(String letter) {
+	public HintLetter(char letter) {
 		setLetter(letter);
+		isGeraden = false;
 	}
 
-	private void setLetter(String letter)throws DomainException {
-		boolean p = Pattern.matches("^[a-z] {1}$", letter);
-		if(p == false) throw new DomainException("Ongeldige letter.");
+	private void setLetter(char letter)throws DomainException {
+		/*String s = "" + letter;
+		boolean p = Pattern.matches("^[a-z] {1}$", s);
+		if(p == false) throw new DomainException("Ongeldige letter.");*/
 		this.letter = letter;	
 	}
+
+	public boolean isGeraden() {
+		return false;
+	}
+
+	public boolean raad(char c) {
+		return false;
+	}
+
+	public Object toChar() {
+		
+		return null;
+	}
+
+	public Object getLetter() {
+		return null;
+	}
+	
+	
+	
+	
 	
 }

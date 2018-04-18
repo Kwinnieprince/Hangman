@@ -6,6 +6,8 @@ import static org.junit.Assert.assertTrue;
 import domain.*;
 import org.junit.Test;
 
+import domain.HintWoord;
+
 
 public class HintWoordTest {
 
