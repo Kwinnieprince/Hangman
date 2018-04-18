@@ -25,7 +25,10 @@ public class Cirkel extends Vorm implements Drawable {
     }
 
     public void teken(Graphics graphics){
-
+    	graphics.drawOval(this.getOmhullende().getMinX(), 
+    					  this.getOmhullende().getMinY(),
+    					  this.getOmhullende().getBreedte(), 
+    					  this.getOmhullende().getHoogte());
     }
 
     public int getRadius(){
@@ -56,4 +59,6 @@ public class Cirkel extends Vorm implements Drawable {
     public String toString(){
         return "Cirkel: middelpunt: (" + getMiddelpunt().getX() + ", " + getMiddelpunt().getY() + ") - straal: " + getRadius() + "\n" + this.getOmhullende().toString();
     }
+    
+    
 }

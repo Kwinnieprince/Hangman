@@ -1,5 +1,7 @@
 package domain;
 
+import java.awt.Graphics;
+
 public class Punt extends Vorm{
 	private int x;
 	private int y;
@@ -32,5 +34,10 @@ public class Punt extends Vorm{
 	@Override
 	public String toString() {
 		return "(" + this.x + "," + this.y + ")";
+	}
+
+	public void teken(Graphics graphics) {
+		graphics.drawLine(this.x, this.y, this.x, this.y);
+		
 	}
 }

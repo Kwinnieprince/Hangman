@@ -1,5 +1,6 @@
 package domain;
 
+import java.awt.Graphics;
 import java.util.ArrayList;
 
 public class Tekening implements Drawable {
@@ -72,6 +73,13 @@ public class Tekening implements Drawable {
         
         return true;
     }
+
+	public void teken(Graphics graphics) {
+		for(Vorm v : this.vormen) {
+			v.teken(graphics);
+		}
+		
+	}
 
 
 
