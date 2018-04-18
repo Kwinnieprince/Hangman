@@ -42,9 +42,11 @@ public class Driehoek extends Vorm implements Drawable {
 	}
 
 	public void teken(Graphics graphics){
-		int[] xPoints = {this.getHoekPunt1().getX(), this.getHoekPunt2().getX(), this.getHoekPunt3().getX() };
-		int[] yPoints = {this.getHoekPunt1().getY(), this.getHoekPunt2().getY(), this.getHoekPunt3().getY() };
-		graphics.drawPolygon(xPoints, yPoints, 3);
+		if(this.isZichtbaar()) {
+			int[] xPoints = {this.getHoekPunt1().getX(), this.getHoekPunt2().getX(), this.getHoekPunt3().getX() };
+			int[] yPoints = {this.getHoekPunt1().getY(), this.getHoekPunt2().getY(), this.getHoekPunt3().getY() };
+			graphics.drawPolygon(xPoints, yPoints, 3);
+		}
 	}
 
 	@Override

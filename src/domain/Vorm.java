@@ -2,7 +2,7 @@ package domain;
 
 public abstract class Vorm implements Drawable {
 	
-	private boolean zichtbaar = false;
+	private boolean zichtbaar = true;
 
 	public abstract Omhullende getOmhullende();
 

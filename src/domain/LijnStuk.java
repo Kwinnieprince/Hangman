@@ -27,6 +27,7 @@ public class LijnStuk extends Vorm implements Drawable {
 	}
 
 	public void teken(Graphics graphics){
+		if(this.isZichtbaar())
 		graphics.drawLine(this.getStartPunt().getX(), 
 						  this.getStartPunt().getY(), 
 						  this.getEindPunt().getX(), 

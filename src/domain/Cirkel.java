@@ -25,6 +25,7 @@ public class Cirkel extends Vorm implements Drawable {
     }
 
     public void teken(Graphics graphics){
+    	if(this.isZichtbaar())
     	graphics.drawOval(this.getOmhullende().getMinX(), 
     					  this.getOmhullende().getMinY(),
     					  this.getOmhullende().getBreedte(), 

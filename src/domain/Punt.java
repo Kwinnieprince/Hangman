@@ -37,6 +37,7 @@ public class Punt extends Vorm{
 	}
 
 	public void teken(Graphics graphics) {
+		if(this.isZichtbaar())
 		graphics.drawLine(this.x, this.y, this.x, this.y);
 		
 	}
