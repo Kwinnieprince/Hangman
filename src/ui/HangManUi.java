@@ -18,7 +18,7 @@ public class HangManUi {
         this.woordenLijst = woordenLijst;
     }
 
-    public void guess(){
+    public void play(){
     	HintWoord woord = new HintWoord(this.woordenLijst.getRandomWoord());
     	String juistOfFout = "";
     	String letter = null;
@@ -37,7 +37,9 @@ public class HangManUi {
         		juistOfFout = e.getMessage() + "\n \n";
         	}
             }
-    	JOptionPane.showMessageDialog(null, "Goedzo! Je hebt het woord geraden.\n \n" + woord);
+    	Object[] keuzes = {"Ja", "Nee"};
+    	Object keuze = JOptionPane.showInputDialog(null, "Goedzo! Je hebt het woord geraden.\n \nWil je nog eens spelen?\n" + woord, "input", JOptionPane.INFORMATION_MESSAGE, null, keuzes, null);
+    	if (keuze == "Ja") this.play();
     }
 
 }

@@ -21,7 +21,7 @@ public class Launcher {
 
         if(keuzeSpel == "Hangman"){
             HangManUi hangManUi = new HangManUi(speler, new WoordenLezer("Hangman").Lees());
-            hangManUi.guess();
+            hangManUi.play();
         }else{
             String tekeningNaam = JOptionPane.showInputDialog("geef de naam van de tekening.");
             Tekening tekening = new Tekening(tekeningNaam);
