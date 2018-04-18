@@ -54,7 +54,7 @@ public class PictionaryUi {
             Rechthoek rechthoek = new Rechthoek(punt, breedteInt, hoogteInt);
             //JOptionPane.showMessageDialog(null, "U heeft een correcte rechthoek gemaakt: " + rechthoek.toString());
             tekening.voegToe(rechthoek);
-            this.drawTekening(this.tekening)
+            this.drawTekening(this.tekening);
 
         }
         
@@ -74,7 +74,7 @@ public class PictionaryUi {
         	}
             //JOptionPane.showMessageDialog(null, "U heeft een correct LijnStuk gemaakt: " + lijnStuk.toString());
         	tekening.voegToe(lijnStuk);
-            this.drawTekening(this.tekening)
+            this.drawTekening(this.tekening);
         }
         
         private void drawTekening(Tekening tekening) {
