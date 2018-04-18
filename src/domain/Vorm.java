@@ -1,6 +1,8 @@
 package domain;
 
 public abstract class Vorm implements Drawable {
+	
+	private boolean zichtbaar = false;
 
 	public abstract Omhullende getOmhullende();
 
@@ -13,5 +15,13 @@ public abstract class Vorm implements Drawable {
 
 	public String toString() {
 		return null;
+	}
+	
+	public boolean isZichtbaar() {
+		return zichtbaar;
+	}
+	
+	public void setZichtbaar(boolean bool) {
+		this.zichtbaar = bool;
 	}
 }
