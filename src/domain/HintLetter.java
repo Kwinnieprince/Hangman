@@ -12,27 +12,34 @@ public class HintLetter {
 	}
 
 	private void setLetter(char letter)throws DomainException {
-		/*String s = "" + letter;
-		boolean p = Pattern.matches("^[a-z] {1}$", s);
-		if(p == false) throw new DomainException("Ongeldige letter.");*/
+		String s = "" + letter;
+		boolean p = Pattern.matches("^[a-zA-Z]{1}$", s);
+		if(!p) throw new DomainException("Ongeldige letter.");
 		this.letter = letter;	
 	}
 
 	public boolean isGeraden() {
-		return false;
+		return this.isGeraden;
 	}
 
 	public boolean raad(char c) {
-		return false;
+		String s = "" + letter;
+		boolean p = Pattern.matches("^[a-zA-Z]{1}$", s);
+		if(!p) throw new DomainException("Ongeldige letter.");
+		if (this.isGeraden) return false;
+		if (Character.toLowerCase(c)==Character.toLowerCase(this.letter)) {
+			this.isGeraden = true;
+			return true;
+		} else return false;
 	}
 
 	public Object toChar() {
-		
-		return null;
+		if (this.isGeraden()) return this.getLetter();
+		return '_';
 	}
 
 	public Object getLetter() {
-		return null;
+		return this.letter;
 	}
 	
 	
