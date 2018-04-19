@@ -16,7 +16,8 @@ import org.junit.runners.Suite.SuiteClasses;
 				TekeningTest.class,
 				RechthoekTest.class,
 				TekeningHangManTest.class,
-				WoordenLijstTest.class
+				WoordenLijstTest.class,
+				HangManTest.class
 				})
 public class AllTests {
 
