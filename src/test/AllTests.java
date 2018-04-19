@@ -14,6 +14,8 @@ import org.junit.runners.Suite.SuiteClasses;
 				LijnStukTest.class,
 				OmhullendeTest.class,
 				TekeningTest.class,
+				RechthoekTest.class,
+				TekeningHangManTest.class,
 				WoordenLijstTest.class
 				})
 public class AllTests {

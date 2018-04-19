@@ -37,6 +37,7 @@ public class HangMan {
 	public boolean isGewonnen() {
 		return woord.isGeraden();
 	}
+
 	public void setSpeler(Speler speler) {
 		if (speler != null) {
 			this.speler = speler;
