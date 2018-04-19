@@ -25,10 +25,6 @@ public class HangMan {
 		return tekening;
 	}
 	
-	public void raadLetter(char letter) {
-		
-	}
-	
 	public boolean isGameOver() {
 		if(tekening.getAantalOnzichtbaar() == 0) return true;
 		else return false;
@@ -58,8 +54,12 @@ public class HangMan {
 		tekening.reset();
 	}
 
-	public void raad(char c) {
-		if(!woord.raad(c)) tekening.setVolgendeZichtbaar();
+	public boolean raad(char c) {
+		if(!woord.raad(c)) {
+			tekening.setVolgendeZichtbaar();
+			return false;
+		}
+		else return true;
 	}
 	
 }

@@ -1,8 +1,7 @@
 package ui;
 
-import domain.DomainException;
+
 import domain.HangMan;
-import domain.HintWoord;
 import domain.Speler;
 
 import javax.swing.*;
@@ -29,31 +28,6 @@ public class HangManUi {
     	hangmanPaneel = new HangmanPaneel(hangmanSpel);
     	hangmanHoofdscherm = new HangManHoofdScherm(hangmanSpel, hangmanPaneel);
     	hangmanHoofdscherm.start();
-    	
-    	
-    	String woord = hangmanSpel.getHint();
-    	String juistOfFout = "";
-    	String letter = null;
-    	while(!hangmanSpel.isGewonnen()) {
-        	try {
-        		letter = JOptionPane.showInputDialog(null, juistOfFout + "Rarara, welk woord zoeken we \n " + woord + " \n Geef een letter:", "Hangman - " + speler.getNaam(), 1 );
-                if (letter == null || letter.trim().isEmpty() || letter.length() > 1) throw new UiException("Geen geldige letter");
-                else {
-                		if (hangmanSpel.raad(letter.charAt(0))) {
-                			juistOfFout = "Super, doe zo voort!\n \n";
-                		} else {
-                			juistOfFout = "Helaas, volgende keer beter!\n \n";
-                		}
-                	}
-        	} catch (UiException e) {
-        		juistOfFout = e.getMessage() + "\n \n";
-        	} catch (DomainException e) {
-        		juistOfFout = e.getMessage() + "\n \n";
-        	}
-            }
-    	Object[] keuzes = {"Ja", "Nee"};
-    	Object keuze = JOptionPane.showInputDialog(null, "Goedzo! Je hebt het woord geraden.\n \nWil je nog eens spelen?\n" + woord, "input", JOptionPane.INFORMATION_MESSAGE, null, keuzes, null);
-    	if (keuze == "Ja") this.play();
     }
 
 }

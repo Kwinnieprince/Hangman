@@ -36,7 +36,7 @@ public class HintWoord {
 
 	public boolean isGeraden() {
 		for(HintLetter x : letters) {
-			if(x.toChar().equals('_')) return false;
+			if(!x.isGeraden())return false;
 		}
 		return true;
 	}

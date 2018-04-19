@@ -61,15 +61,27 @@ public class HangmanPaneel extends JPanel {
 				letter.setText("");
 				getTekenVenster().teken();
 				
+				if(spel.isGewonnen()) {
+					String message = "Goedzo! Je hebt het woord geraden.\n \nWil je nog eens spelen?\n";
+					replay(message);
+				}
+				else if (spel.isGameOver()) {
+					String message = "Helaas, je hebt het woord niet kunnen raden.\n \nWil je nog eens spelen?\n";
+					replay(message);
+				}
 				
-				Object[] keuzes = {"Ja", "Nee"};
-		    	Object keuze = JOptionPane.showInputDialog(null, "Goedzo! Je hebt het woord geraden.\n \nWil je nog eens spelen?\n" + woord, "input", JOptionPane.INFORMATION_MESSAGE, null, keuzes, null);
-		    	if (keuze == "Nee") System.exit(0);
+				
 				//TODO
 				//toon boodschap als gewonnen of verloren en vraag of speler opnieuw wilt spelen
 				//als de speler opnieuw wilt spelen: herzet het spel en het paneel
 				//anders stop (System.exit(0))
 			}
+		}
+		
+		private void replay(String message) {
+			Object[] keuzes = {"Ja", "Nee"};
+	    	Object keuze = JOptionPane.showInputDialog(null, message, "input", JOptionPane.INFORMATION_MESSAGE, null, keuzes, null);
+	    	if (keuze == "Nee") System.exit(0);
 		}
 
 //		@Override
