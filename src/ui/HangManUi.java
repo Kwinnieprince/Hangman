@@ -1,6 +1,7 @@
 package ui;
 
 import domain.DomainException;
+import domain.HangMan;
 import domain.HintWoord;
 import domain.Speler;
 
@@ -12,7 +13,11 @@ public class HangManUi {
 
     private Speler speler;
     private WoordenLijst woordenLijst; //List of words players has to guess one word from
-
+    private HangMan hangmanSpel;
+    private HangmanPaneel hangmanPaneel;
+    private HangManHoofdScherm hangmanHoofdscherm;
+    
+    
     public HangManUi(Speler speler, WoordenLijst woordenLijst){
         this.speler = speler;
         if (woordenLijst == null) throw new UiException("Geen geldige woordenLijst");
@@ -20,15 +25,21 @@ public class HangManUi {
     }
 
     public void play(){
-    	HintWoord woord = new HintWoord(this.woordenLijst.getRandomWoord());
+    	hangmanSpel = new HangMan(speler, woordenLijst);
+    	hangmanPaneel = new HangmanPaneel(hangmanSpel);
+    	hangmanHoofdscherm = new HangManHoofdScherm(hangmanSpel, hangmanPaneel);
+    	hangmanHoofdscherm.start();
+    	
+    	
+    	String woord = hangmanSpel.getHint();
     	String juistOfFout = "";
     	String letter = null;
-    	while(!woord.isGeraden()) {
+    	while(!hangmanSpel.isGewonnen()) {
         	try {
         		letter = JOptionPane.showInputDialog(null, juistOfFout + "Rarara, welk woord zoeken we \n " + woord + " \n Geef een letter:", "Hangman - " + speler.getNaam(), 1 );
                 if (letter == null || letter.trim().isEmpty() || letter.length() > 1) throw new UiException("Geen geldige letter");
                 else {
-                		if (woord.raad(letter.charAt(0))) {
+                		if (hangmanSpel.raad(letter.charAt(0))) {
                 			juistOfFout = "Super, doe zo voort!\n \n";
                 		} else {
                 			juistOfFout = "Helaas, volgende keer beter!\n \n";
