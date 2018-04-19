@@ -11,11 +11,11 @@ public class HangMan {
 	}
 	
 	public String getHint() {
-		
+
 	}
 	
 	public Speler getSpeler() {
-		
+		return speler;
 	}
 	
 	public TekeningHangMan getTekening() {
@@ -34,6 +34,7 @@ public class HangMan {
 	public boolean isGewonnen() {
 		
 	}
+
 	public void setSpeler(Speler speler) {
 		if (speler != null) {
 			this.speler = speler;
