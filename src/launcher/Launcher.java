@@ -26,16 +26,16 @@ public class Launcher {
             String tekeningNaam = JOptionPane.showInputDialog("geef de naam van de tekening.");
             Tekening tekening = new Tekening(tekeningNaam);
 
-            JOptionPane.showMessageDialog(null, speler.getNaam() + " heeft als score: " + speler.getScore(), speler.getNaam(), 1);
+//          JOptionPane.showMessageDialog(null, speler.getNaam() + " heeft als score: " + speler.getScore(), speler.getNaam(), 1);
             PictionaryUi player = new PictionaryUi(speler, tekening); //makes a new PictionaryUi
 
-            Object[] shapes = {"Circkel", "Rechthoek", "LijnStuk"};
+            Object[] shapes = {"Cirkel", "Rechthoek", "LijnStuk"};
             Object keuze = JOptionPane.showInputDialog(null, "Wat wilt u tekenen? ", "input", JOptionPane.INFORMATION_MESSAGE, null, shapes, null);
 
                 while(pictionaryBool == false){
                     try{
                         player.showMenu();
-                        if (keuze == "Circkel") {
+                        if (keuze == "Cirkel") {
                             player.ifCirckel();
                         }else if(keuze == "Rechthoek") {
                             player.ifRechthoek();

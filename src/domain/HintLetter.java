@@ -35,7 +35,10 @@ public class HintLetter {
 
 	public Object toChar() {
 		if (this.isGeraden()) return this.getLetter();
-		if (this.letter == ' ') return "  ";
+		if (this.letter == ' ') {
+			this.isGeraden = true; 
+			return "  ";
+		}
 		return '_';
 	}
 
