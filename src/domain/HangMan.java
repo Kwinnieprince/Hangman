@@ -10,7 +10,7 @@ public class HangMan {
 		setSpeler(speler);
 		setWoordenlijst(woordenlijst);
 		initTekening();
-		woord = new HintWoord(this.woordenlijst.getRandomWoord());
+		nieuwWoord();
 	}
 	
 	public String getHint() {
@@ -60,6 +60,10 @@ public class HangMan {
 			return false;
 		}
 		else return true;
+	}
+	
+	public void nieuwWoord() {
+		this.woord = new HintWoord(this.woordenlijst.getRandomWoord());
 	}
 	
 }

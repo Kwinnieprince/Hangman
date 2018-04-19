@@ -82,6 +82,10 @@ public class HangmanPaneel extends JPanel {
 			Object[] keuzes = {"Ja", "Nee"};
 	    	Object keuze = JOptionPane.showInputDialog(null, message, "input", JOptionPane.INFORMATION_MESSAGE, null, keuzes, null);
 	    	if (keuze == "Nee") System.exit(0);
+	    	if (keuze == "Ja") {
+	    		spel.nieuwWoord();
+	    		reset();
+	    	}
 		}
 
 //		@Override
