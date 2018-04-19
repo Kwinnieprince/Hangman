@@ -37,12 +37,8 @@ public class Punt extends Vorm{
 	}
 
 	public void teken(Graphics graphics) {
-<<<<<<< Updated upstream
 		if(this.isZichtbaar())
 		graphics.drawLine(this.x, this.y, this.x, this.y);
-=======
-		// TODO Auto-generated method stub
->>>>>>> Stashed changes
 		
 	}
 }
