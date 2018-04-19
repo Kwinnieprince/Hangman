@@ -78,6 +78,7 @@ public class Tekening implements Drawable {
 		for(Vorm v : this.vormen) {
 			v.teken(graphics);
 		}
+		// TODO Auto-generated method stub
 		
 	}
 
