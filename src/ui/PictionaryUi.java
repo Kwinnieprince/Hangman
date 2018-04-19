@@ -40,22 +40,28 @@ public class PictionaryUi {
         }
 
         public void ifCirckel(){
-            int radiusInt = Integer.parseInt(JOptionPane.showInputDialog("Radius van de circkel: "));
-            Cirkel cirkel = new Cirkel(new Punt(xInt, yInt), radiusInt);
-            //JOptionPane.showMessageDialog(null, "U heeft een correcte circkel gemaakt: " + cirkel.toString());
-            tekening.voegToe(cirkel);
-            this.drawTekening(this.tekening);
+        	try {
+	            int radiusInt = Integer.parseInt(JOptionPane.showInputDialog("Radius van de circkel: "));
+	            Cirkel cirkel = new Cirkel(new Punt(xInt, yInt), radiusInt);
+	            //JOptionPane.showMessageDialog(null, "U heeft een correcte circkel gemaakt: " + cirkel.toString());
+	            tekening.voegToe(cirkel);
+	            this.drawTekening(this.tekening);
+	        } catch (UiException e) {
+				JOptionPane.showMessageDialog(null, e + "\nProbeer opnieuw");
+			}
         }
 
         public void  ifRechthoek(){
-
-            int breedteInt = Integer.parseInt(JOptionPane.showInputDialog("Wat is de breedte van de rechthoek?"));
-            int hoogteInt = Integer.parseInt(JOptionPane.showInputDialog("Wat is de hoogte van de rechthoek?"));
-            Rechthoek rechthoek = new Rechthoek(punt, breedteInt, hoogteInt);
-            //JOptionPane.showMessageDialog(null, "U heeft een correcte rechthoek gemaakt: " + rechthoek.toString());
-            tekening.voegToe(rechthoek);
-            this.drawTekening(this.tekening);
-
+        	try {
+	            int breedteInt = Integer.parseInt(JOptionPane.showInputDialog("Wat is de breedte van de rechthoek?"));
+	            int hoogteInt = Integer.parseInt(JOptionPane.showInputDialog("Wat is de hoogte van de rechthoek?"));
+	            Rechthoek rechthoek = new Rechthoek(punt, breedteInt, hoogteInt);
+	            //JOptionPane.showMessageDialog(null, "U heeft een correcte rechthoek gemaakt: " + rechthoek.toString());
+	            tekening.voegToe(rechthoek);
+	            this.drawTekening(this.tekening);
+        	} catch (UiException e) {
+    			JOptionPane.showMessageDialog(null, e + "\nProbeer opnieuw");
+    		}
         }
         
         public void ifLijnStuk() {
@@ -68,7 +74,7 @@ public class PictionaryUi {
 	            Punt punt2 = new Punt(xInt2, yInt2);
 	            lijnStuk = new LijnStuk(punt, punt2);
 	            aangemaakt = true;
-        		} catch (DomainException e) {
+        		} catch (UiException e) {
         			JOptionPane.showMessageDialog(null, e + "\nProbeer opnieuw");
         		}
         	}

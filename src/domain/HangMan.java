@@ -19,7 +19,8 @@ public class HangMan {
 	}
 	
 	public TekeningHangMan getTekening() {
-		
+		TekeningHangMan tekening;
+		return tekening = new TekeningHangMan(speler.getNaam());
 	}
 	
 	public void raadLetter(char letter) {
