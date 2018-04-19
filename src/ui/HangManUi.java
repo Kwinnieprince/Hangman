@@ -1,5 +1,6 @@
 package ui;
 
+import domain.DomainException;
 import domain.HintWoord;
 import domain.Speler;
 
@@ -34,6 +35,8 @@ public class HangManUi {
                 		}
                 	}
         	} catch (UiException e) {
+        		juistOfFout = e.getMessage() + "\n \n";
+        	} catch (DomainException e) {
         		juistOfFout = e.getMessage() + "\n \n";
         	}
             }
