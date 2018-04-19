@@ -24,7 +24,7 @@ public class GameUI extends JFrame {
 		setGame(spel);
 		setTekenvenster(new TekenVenster(spel.getTekening()));
 		setSpelpaneel(spelpaneel);
-		spelpaneel.setGameUI(this);
+//		spelpaneel.setGameUI(this);
 		initView();
 	}
 
