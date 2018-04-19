@@ -6,6 +6,7 @@ public class HangMan {
 	
 	public HangMan(Speler speler, WoordenLijst woordenlijst) {
 		setSpeler(speler);
+		setWoordenlijst(woordenlijst);
 		
 	}
 	
