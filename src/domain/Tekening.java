@@ -75,9 +75,13 @@ public class Tekening implements Drawable {
     }
 
 	public void teken(Graphics graphics) {
+<<<<<<< Updated upstream
 		for(Vorm v : this.vormen) {
 			v.teken(graphics);
 		}
+=======
+		// TODO Auto-generated method stub
+>>>>>>> Stashed changes
 		
 	}
 
